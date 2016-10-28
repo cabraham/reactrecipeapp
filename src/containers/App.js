@@ -7,7 +7,9 @@ class App extends Component {
 
   render() {
     return (
-      <div> I am in app.js </div>
+      <div>
+        <button className="btn btn-primary">click me!</button>
+      </div>
     )
   }
 }
