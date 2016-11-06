@@ -4,12 +4,15 @@
   "description": "FreeCodeCamp Recipe App using React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "db": "json-server src/app/db.json",
+    "dev": "start npm run db && npm run start"
   },
   "keywords": [],
   "author": "Ciby Abraham",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.2",
     "bootstrap": "^3.3.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

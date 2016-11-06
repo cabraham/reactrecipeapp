@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import RecipeList from '../containers/recipelist'
 
 class App extends Component {
   constructor(props) {
@@ -7,11 +9,19 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <button className="btn btn-primary">click me!</button>
+      <div className="container">
+        <div className="well">
+          <RecipeList />
+        </div>
       </div>
     )
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    
+  }
+}
+
+export default connect(mapStateToProps)(App);

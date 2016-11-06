@@ -1,0 +1,24 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Pumpkin Pie",
+      "ingredients": [
+        "Pumpkin Puree",
+        "Sweetened Condensed Milk",
+        "Eggs",
+        "Pumpkin Pie Spice",
+        "Pie Crust"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti",
+      "ingredients": [
+        "Noodles",
+        "Tomato Sauce",
+        "(Optional) Meatballs"
+      ]
+    }
+  ]
+}
