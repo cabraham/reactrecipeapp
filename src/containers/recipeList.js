@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions'
+import RecipeView from '../components/recipeView'
 
 class RecipeList extends Component {
   constructor(props) {
@@ -13,38 +14,32 @@ class RecipeList extends Component {
   }
 
   render() {
-    const { items } = this.props
-
-      const html = items.map((r,i) =>
-        <li key={i}>r.name</li>
-     )
-
+    const { items, isLoading } = this.props
     return (
       <div>
-        <ul>
-        </ul>
-        <div className="row">
-          <div className="panel panel-success">
-            <div className="panel-heading">
-              <h4 className="panel-title">
-                <a href="#">Pumpkin Pie</a>
-              </h4>
-            </div>
-          </div>
-        </div>
+          {isLoading &&
+            <h2>Loading</h2>
+          }
+
+          {!isLoading &&
+          <ul>
+            {items.map((r, i) =>
+              <RecipeView key={i} recipe={r} />
+            )}
+          </ul>
+        }
       </div>
     )
   }
 }
 
-RecipeList.propTypes = {
-  recipes: PropTypes.array.isRequired
-}
 
 function mapStateToProps(state) {
   const { recipes } = state
+  const {isLoading, items} = recipes
   return {
-    items: recipes.items
+    isLoading,
+    items
   }
 }
 
